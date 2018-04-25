@@ -156,17 +156,20 @@
 
         </table>
 
-        <button type="button" class="delete-row">Delete Row</button>
+     
 
-		<script>
-    var row=document.getElementById('table1').rows.length;
-    for(i=0;i<row;i++){
-    console.log('Row '+parseFloat(i+1)+' : '+document.getElementById('table1').rows[i].cells.length +' column');
-    }
-	Print(table1);
-</script>
+		        <script language="javascript" type="text/javascript">
+            var tds = document.getElementById('countit').getElementsByTagName('td');
+            var sum = 0;
+            for(var i = 0; i < tds.length; i ++) {
+                if(tds[i].className == 'count-me') {
+                    sum += isNaN(tds[i].innerHTML) ? 0 : parseInt(tds[i].innerHTML);
+                }
+            }
+            document.getElementById('countit').innerHTML += '<tr><td>' + sum + '</td><td>total</td></tr>';
+        </script>
 		
-		
+		   <button type="button" class="delete-row">Delete Row</button>
 		
     </body> 
 
