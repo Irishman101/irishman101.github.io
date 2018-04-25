@@ -89,6 +89,16 @@
 
         });    
 
+		
+
+function calculate() {
+  var my1 = document.getElementById('sparkle-num-pallets').value;
+  var my2 = document.getElementById('cost').value;
+  var result = document.getElementById('sparkle-row-total');
+  var myResult = parseInt(my1) * parseInt(my2); // Parse the strings
+  result.value = myResult;
+}
+    
     </script>
 
     </head>
@@ -129,9 +139,9 @@
 					
 					<th>Before VAT 23%</th>
 					
-					<th>VAT</th>
+					<th><input id="sparkle-num-pallets" >VAT</th>
 					
-					<th>Total</th>
+					<th><input id="cost" >Total</th>
 
                 </tr>
 
@@ -156,7 +166,10 @@
 
         </table>
 
-     
+     <button onclick="calculate()">Calculate</button>
+<br/>
+RESULT:
+<input id="sparkle-row-total">
 
 		        <script language="javascript" type="text/javascript">
             var tds = document.getElementById('countit').getElementsByTagName('td');
@@ -175,3 +188,8 @@
 
     </html>
 
+	
+	
+	
+	
+	
