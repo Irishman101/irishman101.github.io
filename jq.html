@@ -158,6 +158,15 @@
 
         <button type="button" class="delete-row">Delete Row</button>
 
+		<script>
+    var row=document.getElementById('table1').rows.length;
+    for(i=0;i<row;i++){
+    console.log('Row '+parseFloat(i+1)+' : '+document.getElementById('table1').rows[i].cells.length +' column');
+    }
+</script>
+		
+		
+		
     </body> 
 
     </html>
