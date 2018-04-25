@@ -1,3 +1,45 @@
+    <!DOCTYPE html>
+
+    <html lang="en">
+
+    <head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <style type="text/css">
+
+        table{
+
+            width: 100%;
+
+            margin: 20px 0;
+
+            border-collapse: collapse;
+
+        }
+
+        table, th, td{
+
+            border: 1px solid #cdcdcd;
+
+        }
+
+        table th, table td{
+
+            padding: 5px;
+
+            text-align: left;
+
+        }
+
+    </style>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script type="text/javascript">
+
 function calculate() {
   var my1 = document.getElementById('sparkle-num-pallets').value;
   var my2 = document.getElementById('cost').value;
@@ -5,7 +47,11 @@ function calculate() {
   var myResult = parseInt(my1) * parseInt(my2); // Parse the strings
   result.value = myResult;
 }
+    </script>
 
+    </head>
+
+    <body>
 <table>
   <tbody>
     <tr>
@@ -20,3 +66,5 @@ RESULT:
 <input id="sparkle-row-total">
 
 
+</body>
+</html>
