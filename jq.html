@@ -48,9 +48,17 @@
 
                 var name = $("#name").val();
 
-                var email = $("#email").val();
+                var cname = $("#cname").val();
+				
+				var VAT13 = $("#VAT13").val();
 
-                var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td></tr>";
+                var VAT23 = $("#VAT23").val();
+				
+				var VAT = $("#VAT").val();
+
+                var TOTAL = $("#TOTAL").val();
+
+                var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + cname + "</td></td>"+ VAT13 + "</td><td>" + VAT23 + "</td><td>" + VAT + "</td><td>" + TOTAL + "</td></tr>";
 
                 $("table tbody").append(markup);
 
@@ -84,17 +92,17 @@
 
         <form>
 
-            <input type="text" id="number" placeholder="Number">
+            <input type="text" id="name" placeholder="Number">
 
-            <input type="text" id="Company name" placeholder="Company Name">
+            <input type="text" id="cname" placeholder="Company Name">
 			
-			<input type="text" id="Before VAT 13.5" placeholder="Before VAT at 13.5%">
+			<input type="text" id="VAT13" placeholder="Before VAT at 13.5%">
 
-            <input type="text" id="Before Vat 23" placeholder="Before VAT at 23%">
+            <input type="text" id="VAT23" placeholder="Before VAT at 23%">
 			
 			<input type="text" id="VAT" placeholder="VAT">
 
-            <input type="text" id="Total" placeholder="Total">
+            <input type="text" id="TOTAL" placeholder="Total">
 
             <input type="button" class="add-row" value="Add Row">
 
