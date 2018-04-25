@@ -45,7 +45,10 @@
         $(document).ready(function(){
 
             $(".add-row").click(function(){
-
+			
+			
+				var number = $("#number").val()
+				
                 var name = $("#name").val();
 
                 var cname = $("#cname").val();
@@ -58,8 +61,8 @@
 
                 var TOTAL = $("#TOTAL").val();
 
-                var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + cname + "</td></td>"+ VAT13 + "</td><td>" + VAT23 + "</td><td>" + VAT + "</td><td>" + TOTAL + "</td></tr>";
-
+                var markup = "<tr><td>" + number + "</td><td>" + name + "</td><td>" + cname + "</td></td>"+ VAT13 + "</td><td>" + VAT23 + "</td><td>" + VAT + "</td><td>" + TOTAL + "</td></tr>";
+//<td><input type='checkbox' name='record'></td>
                 $("table tbody").append(markup);
 
             });
@@ -92,7 +95,7 @@
 
         <form>
 
-            <input type="text" id="name" placeholder="Number">
+            <input type="text" id="number" placeholder="Number">
 
             <input type="text" id="cname" placeholder="Company Name">
 			
