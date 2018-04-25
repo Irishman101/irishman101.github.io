@@ -47,9 +47,9 @@
             $(".add-row").click(function(){
 			
 			
-				var number = $("#number").val()
 				
-				var number1 = $("#number1").val()
+				
+				var number1 = $("#number").val()
 				
                 var name = $("#name").val();
 
@@ -63,7 +63,7 @@
 
                 var TOTAL = $("#TOTAL").val();
 
-                var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + number1 + "</td><td>" + name + "</td><td>" + cname + "</td></td>"+ VAT13 + "</td><td>" + VAT23 + "</td><td>" + VAT + "</td><td>" + TOTAL + "</td></tr>";
+                var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + number + "</td></td><td>" + cname + "</td></td>"+ VAT13 + "</td><td>" + VAT23 + "</td><td>" + VAT + "</td><td>" + TOTAL + "</td></tr>";
 
                 $("table tbody").append(markup);
 
