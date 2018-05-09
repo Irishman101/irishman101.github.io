@@ -139,9 +139,9 @@ function calculate() {
 					
 					<th>Before VAT 23%</th>
 					
-					<th><input id="sparkle-num-pallets" >10</th>
+					<th><input id="sparkle-num-pallets" >VAT</th>
 					
-					<th><input id="cost" >100</th>
+					<th><input id="cost" >Total</th>
 
                 </tr>
 
@@ -166,20 +166,7 @@ function calculate() {
 
         </table>
 
-     <button onclick="calculate()">Calculate</button>
-<br/>
-RESULT:
-<input id="sparkle-row-total">
-
-		        <script language="javascript" type="text/javascript">
-            var tds = document.getElementById('countit').getElementsByTagName('td');
-            var sum = 0;
-            for(var i = 0; i < tds.length; i ++) {
-                if(tds[i].className == 'count-me') {
-                    sum += isNaN(tds[i].innerHTML) ? 0 : parseInt(tds[i].innerHTML);
-                }
-            }
-            document.getElementById('countit').innerHTML += '<tr><td>' + sum + '</td><td>total</td></tr>';
+     
         </script>
 		
 		   <button type="button" class="delete-row">Delete Row</button>
