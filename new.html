@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Caculate number with JQuery</title>
+  </head>
+  <body>
+    <script src="  https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+
+<input type=”text” id=”qty” />
+<input type=”text” id=”price” />
+<p>Total: <span id=”total”></span></p>
+
+  </body>
+  
+  <script type=’text/javascript’>
+
+$(‘#qty’).on(‘keyup’,function(){
+ var qty = $(this).val();
+ var price = $(‘#price’).val();
+ $(“#total”).html(qty*price);
+};
+$(‘#price’).on(‘keyup’,function(){
+ var qty = $(‘#qty’).val();
+ var price = $(this).val();
+ $(“#total”).html(qty*price);
+};
+
+
+</script>
+
+</html>
