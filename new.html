@@ -1,34 +1,88 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Caculate number with JQuery</title>
-  </head>
-  <body>
-    <script src="  https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Performing Calculations in a Table</title>
+    <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/50A6FEF4-3FA3-3048-B838-3B3155F0CFA7/main.js" charset="UTF-8"></script><script src="../scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.pnm, .price, .subtot, .grdtot').prop('readonly', true);
+            var $tblrows = $("#tblProducts tbody tr");
 
-<script type=’text/javascript’>
+            $tblrows.each(function (index) {
+                var $tblrow = $(this);
 
-$(‘#qty’).on(‘keyup’,function(){
- var qty = $(this).val();
- var price = $(‘#price’).val();
- $(“#total”).html(qty*price);
-};
-$(‘#price’).on(‘keyup’,function(){
- var qty = $(‘#qty’).val();
- var price = $(this).val();
- $(“#total”).html(qty*price);
-};
+                $tblrow.find('.qty').on('change', function () {
 
+                    var qty = $tblrow.find("[name=qty]").val();
+                    var price = $tblrow.find("[name=price]").val();
+                    var subTotal = parseInt(qty, 10) * parseFloat(price);
 
-</script>
+                    if (!isNaN(subTotal)) {
 
-<input type=”text” id=”qty” />
-<input type=”text” id=”price” />
-<p>Total: <span id=”total”></span></p>
+                        $tblrow.find('.subtot').val(subTotal.toFixed(2));
+                        var grandTotal = 0;
 
-  </body>
-  
-  
+                        $(".subtot").each(function () {
+                            var stval = parseFloat($(this).val());
+                            grandTotal += isNaN(stval) ? 0 : stval;
+                        });
 
+                        $('.grdtot').val(grandTotal.toFixed(2));
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Performing Calculations in a Table</h2>
+    <p>Enter a number in the Quantity Column
+        and hit tab
+    </p>
+    <table id="tblProducts">
+    <thead>
+        <tr>
+        <td>Product</td>
+        <td>Quantity</td>
+        <td>Price</td>
+        <td>Sub-Total</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td><input type="text" class="pnm" value="Product One" name="pnm" /></td>
+        <td><input type="text" class="qty" value="" name="qty"/></td>
+        <td><input type="text" class="price" value="220" name="price"/></td>
+        <td><input type="text" class="subtot" value="0" name="subtot"/></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="pnm" value="Product Two" name="pnm" /></td>
+        <td><input type="text" class="qty" value="" name="qty"/></td>
+        <td><input type="text" class="price" value="18.32" name="price"/></td>
+        <td><input type="text" class="subtot" value="0" name="subtot"/></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="pnm" value="Product Three" name="pnm" /></td>
+        <td><input type="text" class="qty" value="" name="qty"/></td>
+        <td><input type="text" class="price" value="29" name="price"/></td>
+        <td><input type="text" class="subtot" value="0" name="subtot"/></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="pnm" value="Product Four" name="pnm" /></td>
+        <td><input type="text" class="qty" value="" name="qty"/></td>
+        <td><input type="text" class="price" value="19.99" name="price"/></td>
+        <td><input type="text" class="subtot" value="0" name="subtot"/></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><input type="text" class="grdtot" value="" name=""/></td>
+        </tr>
+    </tfoot>
+    </table>
+</body>
 </html>
